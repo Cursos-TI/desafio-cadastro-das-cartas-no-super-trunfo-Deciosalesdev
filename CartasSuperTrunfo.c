@@ -4,7 +4,6 @@
 // Tema 1 - Cadastro das Cartas
 // Este código inicial serve como base para o desenvolvimento do sistema de cadastro de cartas de cidades.
 // Siga os comentários para implementar cada parte do desafio.
-//Teste larissa
 
 int main() {
     // Sugestão: Defina variáveis separadas para cada atributo da cidade.
@@ -20,6 +19,7 @@ int main() {
     char codigo2[10] = "B02";
 
     // Dados que serão inseridos pelo usuário
+    unsigned int populacao1, populacao2;
     int populacao1, turismo1;
     float area1, pib1;
 
@@ -58,7 +58,11 @@ int main() {
     // Cálculos - Carta 2
     float densidade2 = populacao2 / area2;
     float pib_per_capita2 = pib2 / populacao2;
-    
+
+    //Super Poder
+    float super_poder1 = populacao1 + area1 + pib1 + turismo1 + pib_per_capita1 + (1.0f / densidade1);
+    float super_poder2 = populacao2 + area2 + pib2 + turismo2 + pib_per_capita2 + (1.0f / densidade2);
+
     // Exibição dos Dados das Cartas:
     // Sugestão: Utilize a função printf para exibir as informações das cartas cadastradas de forma clara e organizada.
     // Exiba os valores inseridos para cada atributo da cidade, um por linha.
@@ -75,6 +79,7 @@ int main() {
     printf("PIB: %.2f\n", pib1);
     printf("PIB per capita: %.2f\n", pib_per_capita1);
     printf("Turismo: %d\n", turismo1);
+    printf("Super Poder: %.2f\n", super_poder1);
 
     // Exibição - Carta 2
     printf("\nCarta 2:\n");
@@ -87,7 +92,18 @@ int main() {
     printf("PIB: %.2f\n", pib2);
     printf("PIB per capita: %.2f\n", pib_per_capita2);
     printf("Turismo: %d\n", turismo2);
+    printf("Super Poder: %.2f\n", super_poder2);
 
-    
+    //Comparações
+    printf("Comparações das Cartas\n");
+    printf("População: Venceu %d\n", populacao1 > populacao2);
+    printf("Área: Venceu %d\n", area1 > area2);
+    printf("PIB: Venceu %d\n", pib1 > pib2);
+    printf("Turismo: Venceu %d\n", turismo1 > turismo2);
+    printf("Densdade Populacional: Venceu %d\n", densidade1 < densidade2);
+    printf("PIB per Capta: Venceu %d\n", pib_per_capita1 > pib_per_capita2);
+    printf("Super Poder: Venceu %d\n", super_poder1 > super_poder2);
+
+
     return 0;
 }
